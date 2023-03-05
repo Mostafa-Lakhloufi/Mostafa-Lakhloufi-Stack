@@ -1,3 +1,4 @@
+import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.LinkedList;
 /**
@@ -21,8 +22,9 @@ public class Lab {
      * @return a newly instantiated Deque. Deques implement both stack and queue behavior.
      */
     public Deque<String> createNewStack(){
-        Deque<String> deque = new LinkedList<>();
-        return deque;
+        //Deque<String> deque = new LinkedList<>();
+        //return deque;
+        return new ArrayDeque<>();
     }
 
     /**
@@ -40,7 +42,7 @@ public class Lab {
      * @param item a String to be added to the deque.
      */
     public void addToTopOfStack(Deque<String> stack, String item){
-
+        stack.push(item);
     }
 
     /**
@@ -51,7 +53,7 @@ public class Lab {
      */
     public String removeFromTopOfStack(Deque<String> stack){
 
-        return stack.removeFirst();
+        return stack.pop();
     }
     /**
      * Peek the value at the top of a deque.
@@ -61,6 +63,6 @@ public class Lab {
      * @return the value peeked from the top of the deque.
      */
     public String getTopOfStackWithoutRemoving(Deque<String> stack){
-        return stack.peekLast();
+        return stack.peek();
     }
 }
